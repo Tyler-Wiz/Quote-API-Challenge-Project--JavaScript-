@@ -36,7 +36,7 @@ app.get("/api/quotes", (req, res, next) => {
 app.post("/api/quotes", (req, res, next) => {
   const { quote, person } = req.query;
   if (quote === "" || person === "") {
-    return res.status(400).send("Doesn't Quote or person doesn't is not added");
+    return res.status(400).send();
   }
   quotes.push(req.query);
   res.send({ quote: req.query });
