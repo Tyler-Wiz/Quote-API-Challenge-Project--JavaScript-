@@ -26,9 +26,7 @@ app.get("/api/quotes", (req, res, next) => {
     return res.send({ quotes: quotes });
   }
   if (person !== "") {
-    const search = (text) =>
-      quotes.filter(({ person }) => person.includes(text));
-    const result = search(person);
+    const result = quotes.filter((quote) => quote.person === person);
     res.send({ quotes: result });
   }
 });
